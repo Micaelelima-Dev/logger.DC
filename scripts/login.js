@@ -1,0 +1,23 @@
+
+var login = document.getElementById('login');
+
+login.addEventListener('click', function () {
+
+    var user = document.getElementById('userLogin').value;
+    var password = document.getElementById('passwordLogin').value;
+
+    var userRegister = sessionStorage.getItem('userRegister');
+    var passwordRegister = sessionStorage.getItem('passwordRegister');
+
+    if (user === userRegister && password === passwordRegister) {
+
+        alert('Acesso permitido!');
+
+        window.location.href = "../pages/allowed.html";
+
+        return;
+
+    }
+
+    alert('Usuário ou senha incorretos!');
+});
